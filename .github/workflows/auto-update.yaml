@@ -1,0 +1,124 @@
+name: Auto-update Formula
+
+on:
+  repository_dispatch:
+    types: [update-formula]
+  workflow_dispatch:
+    inputs:
+      formula:
+        description: 'Formula name (e.g. spotinfo)'
+        required: true
+        type: string
+      version:
+        description: 'Version to update to (without v prefix)'
+        required: false
+        type: string
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Determine formula and version
+      id: info
+      run: |
+        if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+          FORMULA="${{ github.event.client_payload.formula }}"
+          VERSION="${{ github.event.client_payload.version }}"
+          REPO="${{ github.event.client_payload.repo }}"
+        else
+          FORMULA="${{ inputs.formula }}"
+          VERSION="${{ inputs.version }}"
+          REPO="alexei-led/${FORMULA}"
+        fi
+
+        if [ -z "$VERSION" ]; then
+          VERSION=$(curl -s "https://api.github.com/repos/${REPO}/releases/latest" | jq -r '.tag_name')
+        fi
+        VERSION="${VERSION#v}"
+
+        echo "FORMULA=${FORMULA}" >> $GITHUB_OUTPUT
+        echo "VERSION=${VERSION}" >> $GITHUB_OUTPUT
+        echo "REPO=${REPO}" >> $GITHUB_OUTPUT
+        echo "Updating ${FORMULA} to ${VERSION} from ${REPO}"
+
+    - name: Check if update needed
+      id: check
+      run: |
+        FORMULA_FILE="Formula/${{ steps.info.outputs.FORMULA }}.rb"
+        if [ ! -f "$FORMULA_FILE" ]; then
+          echo "Formula file not found: $FORMULA_FILE"
+          exit 1
+        fi
+        CURRENT=$(grep 'version "' "$FORMULA_FILE" | head -1 | cut -d'"' -f2)
+        if [ "$CURRENT" = "${{ steps.info.outputs.VERSION }}" ]; then
+          echo "Already up to date ($CURRENT)"
+          echo "SKIP=true" >> $GITHUB_OUTPUT
+        else
+          echo "Update: $CURRENT -> ${{ steps.info.outputs.VERSION }}"
+          echo "SKIP=false" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Download assets and compute checksums
+      if: steps.check.outputs.SKIP != 'true'
+      id: checksums
+      run: |
+        VERSION="${{ steps.info.outputs.VERSION }}"
+        FORMULA="${{ steps.info.outputs.FORMULA }}"
+        REPO="${{ steps.info.outputs.REPO }}"
+        mkdir -p /tmp/assets && cd /tmp/assets
+
+        FORMULA_FILE="${GITHUB_WORKSPACE}/Formula/${FORMULA}.rb"
+        ASSETS=$(grep -oP '(?<=/)'"${FORMULA}"'_[a-z0-9_]+' "$FORMULA_FILE" | sort -u)
+
+        for asset in $ASSETS; do
+          echo "Downloading ${asset}..."
+          curl -sL -f -o "$asset" "https://github.com/${REPO}/releases/download/v${VERSION}/${asset}" \
+            || curl -sL -f -o "$asset" "https://github.com/${REPO}/releases/download/${VERSION}/${asset}"
+          if [ ! -s "$asset" ]; then
+            echo "Failed to download $asset"
+            exit 1
+          fi
+          SHA=$(sha256sum "$asset" | cut -d' ' -f1)
+          echo "SHA_${asset}=${SHA}" >> $GITHUB_OUTPUT
+          echo "  ${asset}: ${SHA}"
+        done
+
+    - name: Update formula
+      if: steps.check.outputs.SKIP != 'true'
+      run: |
+        VERSION="${{ steps.info.outputs.VERSION }}"
+        FORMULA="${{ steps.info.outputs.FORMULA }}"
+        FORMULA_FILE="Formula/${FORMULA}.rb"
+
+        sed -i "s/version \".*\"/version \"${VERSION}\"/" "$FORMULA_FILE"
+
+        ASSETS=$(grep -oP '(?<=/)'"${FORMULA}"'_[a-z0-9_]+' "$FORMULA_FILE" | sort -u)
+        for asset in $ASSETS; do
+          ENV_KEY="SHA_${asset}"
+          SHA=$(echo '${{ toJSON(steps.checksums.outputs) }}' | jq -r ".${ENV_KEY} // empty")
+          if [ -n "$SHA" ]; then
+            sed -i "/${asset}/,/sha256/ s/sha256 \".*\"/sha256 \"${SHA}\"/" "$FORMULA_FILE"
+          fi
+        done
+
+    - name: Commit and push
+      if: steps.check.outputs.SKIP != 'true'
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+
+        FORMULA_FILE="Formula/${{ steps.info.outputs.FORMULA }}.rb"
+        if ! git diff --quiet "$FORMULA_FILE"; then
+          git add "$FORMULA_FILE"
+          git commit -m "Update ${{ steps.info.outputs.FORMULA }} to ${{ steps.info.outputs.VERSION }}"
+          git push
+          echo "✅ Updated ${{ steps.info.outputs.FORMULA }} to ${{ steps.info.outputs.VERSION }}"
+        else
+          echo "No changes to commit"
+        fi
