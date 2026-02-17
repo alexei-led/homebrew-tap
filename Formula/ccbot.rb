@@ -3,8 +3,8 @@ class Ccbot < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccbot"
-  url "https://github.com/alexei-led/ccbot/archive/refs/tags/v0.2.9.tar.gz"
-  sha256 "b67d63abcb83791b4d9cdb09fe0371e2de42927e3e357cef3cbc91c367018c4a"
+  url "https://github.com/alexei-led/ccbot/archive/refs/tags/v0.2.10.tar.gz"
+  sha256 "91ba46cea76bc7713a2cf882597a7d6915a1a3671fab3b11c41d5233feb854b2"
   license "MIT"
 
   depends_on "python@3.14"
