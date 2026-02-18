@@ -3,8 +3,8 @@ class Ccbot < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccbot"
-  url "https://files.pythonhosted.org/packages/04/1e/7267d953e6999c73b70c3b7941eace32633e913c8a4899d87b9d97ccd73a/ccbot-0.2.16.tar.gz"
-  sha256 "76473017afd8c6697c01c8f7a30fef59db38abec444acdc6521248b03afec2fa"
+  url "https://files.pythonhosted.org/packages/09/bc/abee0467c584bfc35bac5e2cb630752d9a5ae8755389917df5562b8bdff0/ccbot-0.2.17.tar.gz"
+  sha256 "7547c16606eea311f68883c98cff20c1d0c06d81b4713b71acfe834c02d6c71b"
   license "MIT"
 
   depends_on "python@3.14"
@@ -23,6 +23,11 @@ class Ccbot < Formula
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/e0/2d/a891ca51311197f6ad14a7ef42e2399f36cf2f9bd44752b3dc4eab60fdc5/certifi-2026.1.4.tar.gz"
     sha256 "ac726dd470482006e014ad384921ed6438c457018f4b3d204aea4281258b2120"
+  end
+
+  resource "click" do
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "colorlog" do
