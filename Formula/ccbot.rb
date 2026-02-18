@@ -3,8 +3,8 @@ class Ccbot < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccbot"
-  url "https://files.pythonhosted.org/packages/c0/04/cb8d26c36514d697a6259b98228be71afb837c8f65338ca174860c9b61cd/ccbot-0.2.13.tar.gz"
-  sha256 "237b8b23c38558825c888b4ead737d91fac0ebaf3942d8765f83ce2f8fbff801"
+  url "https://files.pythonhosted.org/packages/50/ba/529f867232de055c026f6c24cc5aea7daf033b8ff5b6fcef92d4cf779e50/ccbot-0.2.14.tar.gz"
+  sha256 "5ebd528cc3423671ff41a6377dabc694631b22249cbb2bf50321cbda209adaa7"
   license "MIT"
 
   depends_on "python@3.14"
@@ -83,3 +83,4 @@ class Ccbot < Formula
     assert_match version.to_s, shell_output("#{bin}/ccbot --version")
   end
 end
+
