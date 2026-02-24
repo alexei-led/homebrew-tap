@@ -3,8 +3,8 @@ class Ccbot < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccbot"
-  url "https://files.pythonhosted.org/packages/79/1a/a87f85eee6e160681251b6c336650152a348095907ea9d0060aa1f355004/ccbot-1.0.0.tar.gz"
-  sha256 "35c3af7256702ad40801c373d39fad452c20ba46d543e4196bb2aa1f927181c4"
+  url "https://files.pythonhosted.org/packages/06/a7/96c8986102fbe9b655ff50a081d825b457743d30880c12c4290de0c554fd/ccbot-1.1.0.tar.gz"
+  sha256 "fdd9429819fd587e3fad21d4ea5122338ad6b8d5269fec6a58138e6f610877b2"
   license "MIT"
 
   depends_on "python@3.14"
@@ -70,6 +70,11 @@ class Ccbot < Formula
     sha256 "9ad8fa5937ab05218e2b6a4cff30295ad35afd2f83ac592e68c0d871bb0fdbc4"
   end
 
+  resource "pyte" do
+    url "https://files.pythonhosted.org/packages/ab/ab/b599762933eba04de7dc5b31ae083112a6c9a9db15b01d3109ad797559d9/pyte-0.8.2.tar.gz"
+    sha256 "5af970e843fa96a97149d64e170c984721f20e52227a2f57f0a54207f08f083f"
+  end
+
   resource "python-dotenv" do
     url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
     sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
@@ -83,6 +88,11 @@ class Ccbot < Formula
   resource "telegramify-markdown" do
     url "https://files.pythonhosted.org/packages/33/eb/8a3a557eec87c0fcd4c0939232fa5ea407801050370596daa4ca3e51a1db/telegramify_markdown-0.5.4.tar.gz"
     sha256 "c32bd04e5a1c22519c011ccf7350a01b6d162e6cc9a9d89c83eff964d491007e"
+  end
+
+  resource "wcwidth" do
+    url "https://files.pythonhosted.org/packages/35/a2/8e3becb46433538a38726c948d3399905a4c7cabd0df578ede5dc51f0ec2/wcwidth-0.6.0.tar.gz"
+    sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
   end
 
   def install
