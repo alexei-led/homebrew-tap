@@ -3,8 +3,8 @@ class Ccbot < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccbot"
-  url "https://files.pythonhosted.org/packages/11/87/13e514d55b2de4881b11709bc73a458d9ca8287d8b9a83888f3e1f35a187/ccbot-1.1.1.tar.gz"
-  sha256 "c85409905e9bd6900ffad40512d9b571d07e35f70525efa267b1402d52fa1750"
+  url "https://files.pythonhosted.org/packages/31/19/f8a13b78bf8844b732d306dfa6e5b25254151a16e04fdca2fd7f6d446236/ccbot-1.2.0.tar.gz"
+  sha256 "5dbc189e9c3e6944c7910044f7691808c150015bcffcde0671e79faf60c5d52b"
   license "MIT"
 
   depends_on "python@3.14"
@@ -21,18 +21,13 @@ class Ccbot < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/e0/2d/a891ca51311197f6ad14a7ef42e2399f36cf2f9bd44752b3dc4eab60fdc5/certifi-2026.1.4.tar.gz"
-    sha256 "ac726dd470482006e014ad384921ed6438c457018f4b3d204aea4281258b2120"
+    url "https://files.pythonhosted.org/packages/af/2d/7bf41579a8986e348fa033a31cdd0e4121114f6bce2457e8876010b092dd/certifi-2026.2.25.tar.gz"
+    sha256 "e887ab5cee78ea814d3472169153c2d12cd43b14bd03329a39a9c6e2e80bfba7"
   end
 
   resource "click" do
     url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
     sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
-  end
-
-  resource "colorlog" do
-    url "https://files.pythonhosted.org/packages/a2/61/f083b5ac52e505dfc1c624eafbf8c7589a0d7f32daa398d2e7590efa5fda/colorlog-6.10.1.tar.gz"
-    sha256 "eb4ae5cb65fe7fec7773c2306061a8e63e02efc2c72eba9d27b0fa23c94f1321"
   end
 
   resource "h11" do
@@ -83,6 +78,11 @@ class Ccbot < Formula
   resource "python-telegram-bot" do
     url "https://files.pythonhosted.org/packages/cd/9b/8df90c85404166a6631e857027866263adb27440d8af1dbeffbdc4f0166c/python_telegram_bot-22.6.tar.gz"
     sha256 "50ae8cc10f8dff01445628687951020721f37956966b92a91df4c1bf2d113742"
+  end
+
+  resource "structlog" do
+    url "https://files.pythonhosted.org/packages/ef/52/9ba0f43b686e7f3ddfeaa78ac3af750292662284b3661e91ad5494f21dbc/structlog-25.5.0.tar.gz"
+    sha256 "098522a3bebed9153d4570c6d0288abf80a031dfdb2048d59a49e9dc2190fc98"
   end
 
   resource "telegramify-markdown" do
