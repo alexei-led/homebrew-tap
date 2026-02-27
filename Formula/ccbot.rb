@@ -3,8 +3,8 @@ class Ccbot < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccbot"
-  url "https://files.pythonhosted.org/packages/df/59/be4f3edde6f120d7db2ecc065ee6e782a59ff91d495dc864502027efdaa0/ccbot-1.3.2.tar.gz"
-  sha256 "ef1050d9f8bd195e4016692d6525090d143a674b19c69487eb1e0a7530fafac1"
+  url "https://files.pythonhosted.org/packages/4b/92/86d5b8c364ade8e096bcc6fa06689934d05f4fac1f6457e1aabbd73973bd/ccbot-1.4.0.tar.gz"
+  sha256 "79c66813f140547cfbc5f4160756f33d61f74d3c89f2e04ad4c169cd1b2f5744"
   license "MIT"
 
   depends_on "python@3.14"
@@ -97,6 +97,17 @@ class Ccbot < Formula
 
   def install
     virtualenv_install_with_resources
+  end
+
+  def caveats
+    <<~EOS
+      To enable Claude Code hook notifications (done detection, interactive
+      prompts, subagent tracking), run:
+        ccbot hook --install
+
+      Verify setup with:
+        ccbot doctor
+    EOS
   end
 
   test do
