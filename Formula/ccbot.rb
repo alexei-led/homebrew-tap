@@ -3,8 +3,8 @@ class Ccbot < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccbot"
-  url "https://files.pythonhosted.org/packages/93/80/27697a3c412d18ac2f81bc06faeda31cd734cb1101a6cd3e103d0c137c0e/ccbot-1.6.3.tar.gz"
-  sha256 "440082dc902d2278e9ff7a7b7f52091de5e517ed12ea53a843980a4888d4cdb9"
+  url "https://files.pythonhosted.org/packages/01/85/99af6224f444fe645b49728ece595b2ab770feb859644164656ecee9a6fa/ccbot-1.6.4.tar.gz"
+  sha256 "9e9d4a2ef17d0b13bc2e7ed600b011230ed8c688a51e64dea3c31d5d3662a8dd"
   license "MIT"
 
   depends_on "python@3.14"
@@ -51,8 +51,8 @@ class Ccbot < Formula
   end
 
   resource "libtmux" do
-    url "https://files.pythonhosted.org/packages/8d/99/0ac0f60d5b93a8a291be02ed1f3fcf70ff50c0526fa9a99eb462d74354b1/libtmux-0.53.1.tar.gz"
-    sha256 "0d9ca4bcf5c0fb7d7a1e4ce0c0cdcbcd7fb354a66819c3d60ccea779d83eac83"
+    url "https://files.pythonhosted.org/packages/f7/85/99932ac9ddb90821778f8cabe32b81bbbec280dd1a14a457c512693fb11b/libtmux-0.55.0.tar.gz"
+    sha256 "cdc4aa564b2325618d73d57cb0d7d92475d02026dba2b96a94f87ad328e7e79d"
   end
 
   resource "mistletoe" do
