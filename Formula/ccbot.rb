@@ -3,8 +3,8 @@ class Ccbot < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccbot"
-  url "https://files.pythonhosted.org/packages/22/11/a11229764321d33a910c65f77580399f8321724f6e4cdcfa5be1c15a9734/ccbot-1.6.9.tar.gz"
-  sha256 "9a0601c4c15fb65987b3165d185216bccd243887287014c82f90d1b4768641db"
+  url "https://files.pythonhosted.org/packages/3e/28/ddec485ae3aee483496065f5d0db1b8c7c81aa43655c88982fd7013353f2/ccbot-1.6.10.tar.gz"
+  sha256 "0272499caf11de66f324f1020dfd288577301db2376a4edb88ea243a6bbf6b8a"
   license "MIT"
 
   depends_on "python@3.14"
@@ -55,14 +55,14 @@ class Ccbot < Formula
     sha256 "cdc4aa564b2325618d73d57cb0d7d92475d02026dba2b96a94f87ad328e7e79d"
   end
 
-  resource "mistletoe" do
-    url "https://files.pythonhosted.org/packages/11/96/ea46a376a7c4cd56955ecdfff0ea68de43996a4e6d1aee4599729453bd11/mistletoe-1.4.0.tar.gz"
-    sha256 "1630f906e5e4bbe66fdeb4d29d277e2ea515d642bb18a9b49b136361a9818c9d"
-  end
-
   resource "pillow" do
     url "https://files.pythonhosted.org/packages/1f/42/5c74462b4fd957fcd7b13b04fb3205ff8349236ea74c7c375766d6c82288/pillow-12.1.1.tar.gz"
     sha256 "9ad8fa5937ab05218e2b6a4cff30295ad35afd2f83ac592e68c0d871bb0fdbc4"
+  end
+
+  resource "pyromark" do
+    url "https://files.pythonhosted.org/packages/8b/d8/4bb223a5cadf85a1ad13fc96506d60807d9c5763d23eb86bde5ece02928d/pyromark-0.9.9.tar.gz"
+    sha256 "ac0cd5752133504825e79f83839e1fe6bf742965d0bf16b2fcda86712b5e6174"
   end
 
   resource "pyte" do
@@ -86,8 +86,13 @@ class Ccbot < Formula
   end
 
   resource "telegramify-markdown" do
-    url "https://files.pythonhosted.org/packages/33/eb/8a3a557eec87c0fcd4c0939232fa5ea407801050370596daa4ca3e51a1db/telegramify_markdown-0.5.4.tar.gz"
-    sha256 "c32bd04e5a1c22519c011ccf7350a01b6d162e6cc9a9d89c83eff964d491007e"
+    url "https://files.pythonhosted.org/packages/a6/f4/25dbb8c01dea6f02d3ceac6095ef9aa34ddeaf2ad333b6ef5a573f000f43/telegramify_markdown-1.0.0.tar.gz"
+    sha256 "d4c266b7e93a74771ccc953a3efb4a0f933daa605e450d1970d8c39e62b70d55"
+  end
+
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
+    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "wcwidth" do
