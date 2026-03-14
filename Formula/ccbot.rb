@@ -3,8 +3,8 @@ class Ccbot < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccbot"
-  url "https://files.pythonhosted.org/packages/df/21/83ff86ab6a36226432fa676cf32de77fce1bd79faae7e8600903254de6ca/ccbot-1.6.11.tar.gz"
-  sha256 "6a8020a21c4641967b9c329c626fc47327434a4d12081a6d6aabc67daced54f7"
+  url "https://files.pythonhosted.org/packages/d6/82/2395d303025447817b3e1e32c5b6cec58d780b7860885dbb2d725a1384d4/ccbot-1.6.12.tar.gz"
+  sha256 "afc90f30d05b8e14e6feeae473cd1090fab77ee7d46c0b037f60a00275c908b0"
   license "MIT"
 
   depends_on "python@3.14"
@@ -86,8 +86,8 @@ class Ccbot < Formula
   end
 
   resource "telegramify-markdown" do
-    url "https://files.pythonhosted.org/packages/a6/f4/25dbb8c01dea6f02d3ceac6095ef9aa34ddeaf2ad333b6ef5a573f000f43/telegramify_markdown-1.0.0.tar.gz"
-    sha256 "d4c266b7e93a74771ccc953a3efb4a0f933daa605e450d1970d8c39e62b70d55"
+    url "https://files.pythonhosted.org/packages/3f/74/b92f28ed451edf342fd41a7eb2b2ea824c11046e74b4f35b2cef8630b543/telegramify_markdown-1.1.0.tar.gz"
+    sha256 "99d439897a0483cad834cfcf30161084d85cefec8543bc534abdd20110096007"
   end
 
   resource "typing-extensions" do
