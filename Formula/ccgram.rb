@@ -3,8 +3,8 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/6b/2a/d7a4abfc35f6637153d6b69a8dcc78b987955e1e789bc4835321e26b91a4/ccgram-2.0.1.tar.gz"
-  sha256 "aa5424270c3cd1a785e3cff5770e84ca5004bb747407447f0d020c1321f5b9c9"
+  url "https://files.pythonhosted.org/packages/df/37/fd1783a2caef9ab4aafec120715a7b49f0fb1780369c607409d314e40f4f/ccgram-2.1.0.tar.gz"
+  sha256 "17c1db75d99864e2e6a9387f055a2b626d0125bef7eceb2d3ab89f86a557a3b9"
   license "MIT"
 
   depends_on "python@3.14"
@@ -86,8 +86,8 @@ class Ccgram < Formula
   end
 
   resource "telegramify-markdown" do
-    url "https://files.pythonhosted.org/packages/3f/74/b92f28ed451edf342fd41a7eb2b2ea824c11046e74b4f35b2cef8630b543/telegramify_markdown-1.1.0.tar.gz"
-    sha256 "99d439897a0483cad834cfcf30161084d85cefec8543bc534abdd20110096007"
+    url "https://files.pythonhosted.org/packages/b0/94/0b29f09c3c9d28cd7b8790c4bc8aa805b126ece87f2ddc5d0c28dc9cb922/telegramify_markdown-1.1.1.tar.gz"
+    sha256 "0fc66835b889e156ef47aa1c70a215368f9673f86cac23e539f5d9fa923a4c35"
   end
 
   resource "typing-extensions" do
