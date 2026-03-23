@@ -3,8 +3,8 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/c8/6a/172322ce53c2980b5fbd497e4fe731325bcdca4afa57a89fd44863c192dd/ccgram-2.2.4.tar.gz"
-  sha256 "b656a8ffddbea9fb0bb8cb73792d42853d055e116bb0bd3ff52957b387e2b9d7"
+  url "https://files.pythonhosted.org/packages/b4/a8/2ead81881f3cf4c0c112f7d6f269a375327894200e6818085857aa69def2/ccgram-2.2.5.tar.gz"
+  sha256 "ff255daae9e122c507d9b9dd0e68573296e72bd622ddce2fc8ab847db936e5eb"
   license "MIT"
 
   depends_on "python@3.14"
@@ -61,8 +61,8 @@ class Ccgram < Formula
   end
 
   resource "pyromark" do
-    url "https://files.pythonhosted.org/packages/8b/d8/4bb223a5cadf85a1ad13fc96506d60807d9c5763d23eb86bde5ece02928d/pyromark-0.9.9.tar.gz"
-    sha256 "ac0cd5752133504825e79f83839e1fe6bf742965d0bf16b2fcda86712b5e6174"
+    url "https://files.pythonhosted.org/packages/90/d1/79622b7d164490a02066a74e4a710d931c1252aea225640bd4453cce2310/pyromark-0.9.10.tar.gz"
+    sha256 "87a2a8e01e4214014a5697f87c9afd3563e2e2623e2926d97e9535651cae2c07"
   end
 
   resource "pyte" do
