@@ -3,8 +3,8 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/b4/a8/2ead81881f3cf4c0c112f7d6f269a375327894200e6818085857aa69def2/ccgram-2.2.5.tar.gz"
-  sha256 "ff255daae9e122c507d9b9dd0e68573296e72bd622ddce2fc8ab847db936e5eb"
+  url "https://files.pythonhosted.org/packages/b5/82/08a724d63b8d6d179fead72be6b556fa06c01e2967bd79ca7ce2d3cd3de1/ccgram-2.3.0.tar.gz"
+  sha256 "cf275246c7e5bb8f363b6d1c768bb3caf911c2d8f4da384639416f9640f28fae"
   license "MIT"
 
   depends_on "python@3.14"
@@ -16,8 +16,8 @@ class Ccgram < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
-    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
+    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
+    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
   end
 
   resource "certifi" do
