@@ -3,8 +3,8 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/d7/cd/beee144d6986fae2ee9b8e72c59e5e8f6ec87dfb775b3a13b8744af0f28f/ccgram-2.6.1.tar.gz"
-  sha256 "f2e785355d8ceddba5dee6792b256856db267e5846cbc21dc861e92eff214f4d"
+  url "https://files.pythonhosted.org/packages/5a/bd/41ab7d8f9b7779412a9253a665422e2bc294128fe791437083647460b4cd/ccgram-2.7.0.tar.gz"
+  sha256 "f9c390ebb5e74f98055a1fe1e434c5a52b47d8cd47b3c4c92db81c408df5e97a"
   license "MIT"
 
   depends_on "python@3.14"
@@ -26,8 +26,8 @@ class Ccgram < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
+    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
   end
 
   resource "h11" do
