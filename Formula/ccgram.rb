@@ -3,8 +3,8 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/07/4d/0ea8e6e9fb49ad45861bcd939e4e187314ae018e2776f47b2de87b3f38d3/ccgram-2.8.0.tar.gz"
-  sha256 "c21e0ef5b636197c875ddd293a82c66a5063691833429fca14af01b5f1c4bf69"
+  url "https://files.pythonhosted.org/packages/7b/10/cc738e406c5e39c4d5c485ba9c58710cd30656573c34a108758a8c214d05/ccgram-2.8.1.tar.gz"
+  sha256 "7941a24c66f27217e270a22a7bf59f448385bea2b4a4754133b1f9c73eaae44a"
   license "MIT"
 
   depends_on "python@3.14"
@@ -13,6 +13,11 @@ class Ccgram < Formula
   resource "aiofiles" do
     url "https://files.pythonhosted.org/packages/41/c3/534eac40372d8ee36ef40df62ec129bee4fdb5ad9706e58a29be53b2c970/aiofiles-25.1.0.tar.gz"
     sha256 "a8d728f0a29de45dc521f18f07297428d56992a742f0cd2701ba86e44d23d5b2"
+  end
+
+  resource "aiolimiter" do
+    url "https://files.pythonhosted.org/packages/f1/23/b52debf471f7a1e42e362d959a3982bdcb4fe13a5d46e63d28868807a79c/aiolimiter-1.2.1.tar.gz"
+    sha256 "e02a37ea1a855d9e832252a105420ad4d15011505512a1a1d814647451b5cca9"
   end
 
   resource "anyio" do
