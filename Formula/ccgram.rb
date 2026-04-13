@@ -3,8 +3,8 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/44/49/68276e37bc9df33cc3306f460974be1ea2f534d14e7c7109a6d352ef6699/ccgram-2.8.2.tar.gz"
-  sha256 "388c0201744c0be9d5c1e4dc1ddd76f8698b6115301c9fc7ece4712c4ec89cb7"
+  url "https://files.pythonhosted.org/packages/9f/58/1a7e34bb74fc5eb32ee18b4fc597fc0e384d5649f48a20efb7615af3271b/ccgram-2.9.0.tar.gz"
+  sha256 "8142a690f431e2b89d74b28a2546602fa3a94015d8924eed0c35d7645f718dfc"
   license "MIT"
 
   depends_on "python@3.14"
@@ -58,6 +58,11 @@ class Ccgram < Formula
   resource "libtmux" do
     url "https://files.pythonhosted.org/packages/f7/85/99932ac9ddb90821778f8cabe32b81bbbec280dd1a14a457c512693fb11b/libtmux-0.55.0.tar.gz"
     sha256 "cdc4aa564b2325618d73d57cb0d7d92475d02026dba2b96a94f87ad328e7e79d"
+  end
+
+  resource "pathspec" do
+    url "https://files.pythonhosted.org/packages/fa/36/e27608899f9b8d4dff0617b2d9ab17ca5608956ca44461ac14ac48b44015/pathspec-1.0.4.tar.gz"
+    sha256 "0210e2ae8a21a9137c0d470578cb0e595af87edaa6ebf12ff176f14a02e0e645"
   end
 
   resource "pillow" do
