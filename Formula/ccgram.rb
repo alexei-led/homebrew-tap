@@ -3,8 +3,8 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/15/3f/c412637d56a4a021f2ed9041c86daa142441fd3706bc2510044963b2033c/ccgram-2.11.0.tar.gz"
-  sha256 "312cafe4ecbe95e522d870364f816edbac7a0664bf07521f85a8cdf9ae91cda0"
+  url "https://files.pythonhosted.org/packages/b1/df/3bf11a30fffe005223a05f6d584d15494a13f9cd48ce4f15f48a586b8546/ccgram-2.11.1.tar.gz"
+  sha256 "2ed5361e64dc04566a08272a358fcfbb7967932a037e38c7288ce317b3caeb49"
   license "MIT"
 
   depends_on "python@3.14"
@@ -26,13 +26,13 @@ class Ccgram < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/af/2d/7bf41579a8986e348fa033a31cdd0e4121114f6bce2457e8876010b092dd/certifi-2026.2.25.tar.gz"
-    sha256 "e887ab5cee78ea814d3472169153c2d12cd43b14bd03329a39a9c6e2e80bfba7"
+    url "https://files.pythonhosted.org/packages/25/ee/6caf7a40c36a1220410afe15a1cc64993a1f864871f698c0f93acb72842a/certifi-2026.4.22.tar.gz"
+    sha256 "8d455352a37b71bf76a79caa83a3d6c25afee4a385d632127b6afb3963f1c580"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
-    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
+    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
+    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
   end
 
   resource "h11" do
@@ -51,18 +51,18 @@ class Ccgram < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
+    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
   end
 
   resource "libtmux" do
-    url "https://files.pythonhosted.org/packages/f7/85/99932ac9ddb90821778f8cabe32b81bbbec280dd1a14a457c512693fb11b/libtmux-0.55.0.tar.gz"
-    sha256 "cdc4aa564b2325618d73d57cb0d7d92475d02026dba2b96a94f87ad328e7e79d"
+    url "https://files.pythonhosted.org/packages/86/01/fa4f839045d32576d4c193d85ba37e47908fea8227f18800847f589e2476/libtmux-0.55.1.tar.gz"
+    sha256 "dcee950537b8bda4337267bc2cb62b434c4c8da3a75c1546151674238ef14e20"
   end
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/fa/36/e27608899f9b8d4dff0617b2d9ab17ca5608956ca44461ac14ac48b44015/pathspec-1.0.4.tar.gz"
-    sha256 "0210e2ae8a21a9137c0d470578cb0e595af87edaa6ebf12ff176f14a02e0e645"
+    url "https://files.pythonhosted.org/packages/2e/17/9c3094b822982b9f1ea666d8580ce59000f61f87c1663556fb72031ad9ec/pathspec-1.1.0.tar.gz"
+    sha256 "f5d7c555da02fd8dde3e4a2354b6aba817a89112fa8f333f7917a2a4834dd080"
   end
 
   resource "pillow" do
@@ -96,8 +96,8 @@ class Ccgram < Formula
   end
 
   resource "telegramify-markdown" do
-    url "https://files.pythonhosted.org/packages/f7/ac/7bd28e908c64695a6fd3412a35d8090ba9891389dc0437e06a5f6a1e1d81/telegramify_markdown-1.1.2.tar.gz"
-    sha256 "6d506b597d74d6113e9ec511dd6870a8f75b5653cfba697d942c1cbaca0aa415"
+    url "https://files.pythonhosted.org/packages/9d/fa/ef2a620ef57038f319651a439dbd3e7764c7679d625e36ab8dbf246e6322/telegramify_markdown-1.1.3.tar.gz"
+    sha256 "8075d758edaa511380c4dfeda621efe987aed94235ffb00d3dc92092d2b5a3bf"
   end
 
   resource "typing-extensions" do
