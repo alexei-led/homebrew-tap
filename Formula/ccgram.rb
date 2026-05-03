@@ -3,8 +3,8 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/6c/3e/9198a075047b4101e595661b54054ebc7dec4068a9d0eaeb76686561efa2/ccgram-3.0.2.tar.gz"
-  sha256 "85998f69eabfc1c6680abe7589e42718eddc0de7d672a8c88974f5481a48066e"
+  url "https://files.pythonhosted.org/packages/dc/39/6534368b5271e22bfa23ee971b34ac84c5bf534ec57cda01d68577a56a3b/ccgram-3.0.3.tar.gz"
+  sha256 "6cec9281709491c1b98a1040e3b1e2a3bab01cbfae22695d4d879147e441f072"
   license "MIT"
 
   depends_on "python@3.14"
@@ -141,8 +141,8 @@ class Ccgram < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/35/a2/8e3becb46433538a38726c948d3399905a4c7cabd0df578ede5dc51f0ec2/wcwidth-0.6.0.tar.gz"
-    sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
+    url "https://files.pythonhosted.org/packages/2c/ee/afaf0f85a9a18fe47a67f1e4422ed6cf1fe642f0ae0a2f81166231303c52/wcwidth-0.7.0.tar.gz"
+    sha256 "90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0"
   end
 
   resource "yarl" do
