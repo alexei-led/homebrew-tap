@@ -3,8 +3,8 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/fd/73/3400e886f88673cd58c51bccc3b8c1f6adea9c34bbefb65d51d857ec89b7/ccgram-3.0.7.tar.gz"
-  sha256 "155c4581768bbbf0e99b157d106cb4661f0bf6c1af4c16409311975f51f0aac1"
+  url "https://files.pythonhosted.org/packages/96/b9/4a181a53f1f052e394d13aa08c8b92ddfc15f17d5332b9f41d9754fb1f0e/ccgram-3.0.8.tar.gz"
+  sha256 "1112c3753c5987646ff7485794c2f0cf50be85cb3db089ec7ab78bfa55cb8512"
   license "MIT"
 
   depends_on "python@3.14"
@@ -76,13 +76,13 @@ class Ccgram < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "libtmux" do
-    url "https://files.pythonhosted.org/packages/86/01/fa4f839045d32576d4c193d85ba37e47908fea8227f18800847f589e2476/libtmux-0.55.1.tar.gz"
-    sha256 "dcee950537b8bda4337267bc2cb62b434c4c8da3a75c1546151674238ef14e20"
+    url "https://files.pythonhosted.org/packages/7d/62/896e1e0412dd76c88926604d5a231feb9b116d6f32abe19054e244504dbc/libtmux-0.56.0.tar.gz"
+    sha256 "bddf52214405e4f64850826d44cbc958d4a01c53432983cee0e2856bdbbaaedb"
   end
 
   resource "multidict" do
@@ -101,8 +101,8 @@ class Ccgram < Formula
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/9e/da/e9fc233cf63743258bff22b3dfa7ea5baef7b5bc324af47a0ad89b8ffc6f/propcache-0.4.1.tar.gz"
-    sha256 "f48107a8c637e80362555f37ecf49abe20370e557cc4ab374f04ec4423c97c3d"
+    url "https://files.pythonhosted.org/packages/ec/44/c87281c333769159c50594f22610f77398a47ccbfbbf23074e744e86f87c/propcache-0.5.2.tar.gz"
+    sha256 "01c4fc7480cd0598bb4b57022df55b9ca296da7fc5a8760bd8451a7e63a7d427"
   end
 
   resource "pyromark" do
@@ -131,8 +131,8 @@ class Ccgram < Formula
   end
 
   resource "telegramify-markdown" do
-    url "https://files.pythonhosted.org/packages/9d/fa/ef2a620ef57038f319651a439dbd3e7764c7679d625e36ab8dbf246e6322/telegramify_markdown-1.1.3.tar.gz"
-    sha256 "8075d758edaa511380c4dfeda621efe987aed94235ffb00d3dc92092d2b5a3bf"
+    url "https://files.pythonhosted.org/packages/89/db/198bda5ba14b83b714fe5b632992684fac8fa2c07bbc7b14508e8f67e9a9/telegramify_markdown-1.1.5.tar.gz"
+    sha256 "56da17648849f86a351eb712eef4461f8c11aecc7fd27a293f5d9a0a6333b22d"
   end
 
   resource "typing-extensions" do
