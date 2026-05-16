@@ -3,8 +3,8 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/0b/6d/61faf57e3571a1e74d89a13003cdca626ce755758a374e427a803484edcb/ccgram-3.1.0.tar.gz"
-  sha256 "c507c7f31b3e2fae6f9883fee54071f63a89e78543a46040a0f58d343029853c"
+  url "https://files.pythonhosted.org/packages/cb/ae/a7dc9e2d3a4215ae63ec552a193b4e408601328440c4f0a43063b06b409e/ccgram-3.1.1.tar.gz"
+  sha256 "ac8029ff1595a00e3fdb2d030b66de303cffd011ab9fb617eca358d87f10dd64"
   license "MIT"
 
   depends_on "python@3.14"
@@ -123,6 +123,11 @@ class Ccgram < Formula
   resource "python-telegram-bot" do
     url "https://files.pythonhosted.org/packages/e4/25/2258161b1069e66d6c39c0a602dbe57461d4767dc0012539970ea40bc9d6/python_telegram_bot-22.7.tar.gz"
     sha256 "784b59ea3852fe4616ad63b4a0264c755637f5d725e87755ecdee28300febf61"
+  end
+
+  resource "socksio" do
+    url "https://files.pythonhosted.org/packages/f8/5c/48a7d9495be3d1c651198fd99dbb6ce190e2274d0f28b9051307bdec6b85/socksio-1.0.0.tar.gz"
+    sha256 "f88beb3da5b5c38b9890469de67d0cb0f9d494b78b106ca1845f96c10b91c4ac"
   end
 
   resource "structlog" do
