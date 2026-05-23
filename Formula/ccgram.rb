@@ -3,8 +3,8 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/8d/db/daeb8eb7c28223dd045e39f70c466bfd87477d7fcb7ff1a6c22d7e4e3658/ccgram-3.3.3.tar.gz"
-  sha256 "562f74dea788cf227737df220e5e5899bbee62259ded0aeb8c6e82dda7d5714d"
+  url "https://files.pythonhosted.org/packages/12/51/a1ae3c1144e19af867628b40baa6479ea96bf61c41e4070a95bec6753c93/ccgram-3.4.0.tar.gz"
+  sha256 "2fd6c90a7bd3dd3ca569e52af50653f493a63780a461347ee1a1fa6ee3055002"
   license "MIT"
 
   depends_on "python@3.14"
@@ -81,8 +81,8 @@ class Ccgram < Formula
   end
 
   resource "libtmux" do
-    url "https://files.pythonhosted.org/packages/da/42/790280a61c8c49a15b3213614f52d0a4f79ec913e9520d35096b1bcb28f2/libtmux-0.57.1.tar.gz"
-    sha256 "c216671a066d06e093d7a8e806d0b7467e5f7edfe08742686de33073e1f9cf2a"
+    url "https://files.pythonhosted.org/packages/65/4e/daccd4fd72ad3f17b8fb97f69403774d6c510b5d513521b454fdaedb0561/libtmux-0.58.0.tar.gz"
+    sha256 "abbe330bec2c45687a4bf417ee436373b37046afe123ba547495ee0448e1145a"
   end
 
   resource "multidict" do
