@@ -80,7 +80,7 @@ jobs:
           FORMULA_FILE="${GITHUB_WORKSPACE}/Formula/${{ steps.info.outputs.FORMULA }}.rb"
 
           mkdir -p /tmp/assets
-          ruby <<'RUBY' "$FORMULA_FILE" "$VERSION" > /tmp/assets/urls.txt
+          ruby - "$FORMULA_FILE" "$VERSION" > /tmp/assets/urls.txt <<'RUBY'
           formula_file, version = ARGV
           File.readlines(formula_file, chomp: true).each do |line|
             next unless (match = line.match(/url "([^"]+)"/))
@@ -112,7 +112,7 @@ jobs:
           VERSION="${{ steps.info.outputs.VERSION }}"
           FORMULA_FILE="Formula/${{ steps.info.outputs.FORMULA }}.rb"
 
-          ruby <<'RUBY' "$FORMULA_FILE" "$VERSION" /tmp/assets/checksums.tsv
+          ruby - "$FORMULA_FILE" "$VERSION" /tmp/assets/checksums.tsv <<'RUBY'
           formula_file, version, checksums_file = ARGV
 
           checksums = File.readlines(checksums_file, chomp: true).to_h do |line|
