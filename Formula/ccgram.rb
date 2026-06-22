@@ -3,8 +3,8 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/6f/35/da50f442e2d9fb506a87fbe0153711c1ded1f57b87e97896caeebf204efe/ccgram-3.6.0.tar.gz"
-  sha256 "17435aaf7654c2bb89f0dcdecdb69886e3b17f6104b6d5718c793da645fe513f"
+  url "https://files.pythonhosted.org/packages/4c/e8/145763659b3b1c6e04f57abf4e47f71d989f48b5b7d2812fce2a708f19dd/ccgram-4.0.0.tar.gz"
+  sha256 "66845f69ef49799b20291ec4d21b54d5c532fbab6c2e34bd1589dd90eb6f1014"
   license "MIT"
 
   depends_on "python@3.14"
