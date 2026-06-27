@@ -3,8 +3,8 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/db/98/78a8a726cb33e6aac1dbe7ff09185b470eeee40f76a87504def72ddfbecb/ccgram-4.0.1.tar.gz"
-  sha256 "58619c99118c606160b3e5086084216c3e67ffc426b004b83412a41ca336e85a"
+  url "https://files.pythonhosted.org/packages/33/fa/880d0c27450bad5a7e1cade6f7aa6895763d6681b51814892350e230b4eb/ccgram-4.1.0.tar.gz"
+  sha256 "89e161afb5f24c8a91583c284035f184afd03db75d67706bd549dd98bc0a1a0d"
   license "MIT"
 
   depends_on "python@3.14"
@@ -36,8 +36,8 @@ class Ccgram < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
-    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
+    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
+    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
   end
 
   resource "attrs" do
@@ -51,8 +51,8 @@ class Ccgram < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "frozenlist" do
