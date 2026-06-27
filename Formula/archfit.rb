@@ -1,26 +1,26 @@
 class Archfit < Formula
   desc "Architecture-fitness checks for AI agents and CI"
   homepage "https://github.com/alexei-led/archfit"
-  version "0.12.0"
+  version "0.12.1"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/alexei-led/archfit/releases/download/v#{version}/archfit-v#{version}-darwin-arm64"
-      sha256 "013cad3f38b409e8bad42170a864d70e80fd59c1b89d115944398f670e40a32d"
+      sha256 "2f94fb377fa382a805c1cbcb2cc826467c61eabe752b18b08793278f6d2a3907"
     else
       url "https://github.com/alexei-led/archfit/releases/download/v#{version}/archfit-v#{version}-darwin-amd64"
-      sha256 "99094253126279a88ef098569af9a148cf89d282193db43680b314bbf02b6737"
+      sha256 "930685bc3a13a71685c454ff09368179b57a86700eceee6248f553b837531392"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/alexei-led/archfit/releases/download/v#{version}/archfit-v#{version}-linux-arm64"
-      sha256 "78d1e9f4507a5e1610fb7d6a5bca672b7cc30f523bf063b975d51e8603973618"
+      sha256 "d7e58a4691f323dca65b1cf52ee8c13f7cf2ca9150f34f164d6e217af1194f42"
     else
       url "https://github.com/alexei-led/archfit/releases/download/v#{version}/archfit-v#{version}-linux-amd64"
-      sha256 "50e6ee2a76e944ef8f3ce0db07db60cded57c2eac476910f82cd0a62deb6b3cb"
+      sha256 "938c6f3a3f49117c8958836693f4e0986285b1d29ada7ee05049fb216d1be1e4"
     end
   end
 
