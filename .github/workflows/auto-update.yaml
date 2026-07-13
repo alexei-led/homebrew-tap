@@ -18,37 +18,76 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      EVENT_NAME: ${{ github.event_name }}
+      DISPATCH_FORMULA: ${{ github.event.client_payload.formula }}
+      DISPATCH_VERSION: ${{ github.event.client_payload.version }}
+      DISPATCH_REPO: ${{ github.event.client_payload.repo }}
+      INPUT_FORMULA: ${{ inputs.formula }}
+      INPUT_VERSION: ${{ inputs.version }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
       - name: Determine formula and version
         id: info
+        shell: bash
         run: |
-          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
-            FORMULA="${{ github.event.client_payload.formula }}"
-            VERSION="${{ github.event.client_payload.version }}"
-            REPO="${{ github.event.client_payload.repo }}"
-          else
-            FORMULA="${{ inputs.formula }}"
-            VERSION="${{ inputs.version }}"
+          set -euo pipefail
+
+          if [ "$EVENT_NAME" = "repository_dispatch" ]; then
+            FORMULA="$DISPATCH_FORMULA"
+            VERSION="$DISPATCH_VERSION"
+            REPO="$DISPATCH_REPO"
+          elif [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            FORMULA="$INPUT_FORMULA"
+            VERSION="$INPUT_VERSION"
             REPO="alexei-led/${FORMULA}"
+          else
+            echo "Unsupported event: $EVENT_NAME" >&2
+            exit 1
           fi
 
-          if [ -z "$VERSION" ]; then
-            VERSION=$(curl -s "https://api.github.com/repos/${REPO}/releases/latest" | jq -r '.tag_name')
+          if [[ ! "$FORMULA" =~ ^[a-z0-9][a-z0-9@+._-]*$ || ${#FORMULA} -gt 128 ]]; then
+            echo "Invalid formula name: $FORMULA" >&2
+            exit 1
           fi
-          VERSION="${VERSION#v}"
+
+          if [[ ! "$REPO" =~ ^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ || ${#REPO} -gt 255 ]]; then
+            echo "Invalid repository: $REPO" >&2
+            exit 1
+          fi
+
+          if [ -n "$VERSION" ]; then
+            VERSION="${VERSION#v}"
+            if [[ ! "$VERSION" =~ ^[0-9A-Za-z][0-9A-Za-z._+-]*$ || ${#VERSION} -gt 128 ]]; then
+              echo "Invalid version: $VERSION" >&2
+              exit 1
+            fi
+          else
+            RELEASE_JSON=$(curl --fail --silent --show-error --location --retry 3 \
+              "https://api.github.com/repos/${REPO}/releases/latest")
+            VERSION=$(jq -r '.tag_name // empty' <<< "$RELEASE_JSON")
+            VERSION="${VERSION#v}"
+          fi
+
+          if [[ ! "$VERSION" =~ ^[0-9A-Za-z][0-9A-Za-z._+-]*$ || ${#VERSION} -gt 128 ]]; then
+            echo "Invalid version from release metadata: $VERSION" >&2
+            exit 1
+          fi
 
           {
-            echo "FORMULA=${FORMULA}"
-            echo "VERSION=${VERSION}"
-            echo "REPO=${REPO}"
-          } >> "$GITHUB_OUTPUT"
+            printf 'FORMULA=%s\n' "$FORMULA"
+            printf 'VERSION=%s\n' "$VERSION"
+            printf 'REPO=%s\n' "$REPO"
+          } >> "$GITHUB_ENV"
           echo "Updating ${FORMULA} to ${VERSION} from ${REPO}"
       - name: Check if update needed
-        id: check
+        shell: bash
         run: |
-          FORMULA_FILE="Formula/${{ steps.info.outputs.FORMULA }}.rb"
+          set -euo pipefail
+          FORMULA_FILE="Formula/${FORMULA}.rb"
           if [ ! -f "$FORMULA_FILE" ]; then
             echo "Formula file not found: $FORMULA_FILE"
             exit 1
@@ -64,23 +103,26 @@ jobs:
             exit 1
           fi
 
-          CURRENT=$(grep 'version "' "$FORMULA_FILE" | head -1 | cut -d'"' -f2)
-          if [ "$CURRENT" = "${{ steps.info.outputs.VERSION }}" ]; then
+          CURRENT=$(awk -F'"' '/^[[:space:]]*version "/ { print $2; exit }' "$FORMULA_FILE")
+          if [ "$CURRENT" = "$VERSION" ]; then
             echo "Already up to date ($CURRENT)"
-            echo "SKIP=true" >> "$GITHUB_OUTPUT"
+            printf 'SKIP=true\n' >> "$GITHUB_ENV"
           else
-            echo "Update: $CURRENT -> ${{ steps.info.outputs.VERSION }}"
-            echo "SKIP=false" >> "$GITHUB_OUTPUT"
+            echo "Update: $CURRENT -> $VERSION"
+            printf 'SKIP=false\n' >> "$GITHUB_ENV"
           fi
       - name: Download assets and compute checksums
-        if: steps.check.outputs.SKIP != 'true'
+        shell: bash
         run: |
-          VERSION="${{ steps.info.outputs.VERSION }}"
-          REPO="${{ steps.info.outputs.REPO }}"
-          FORMULA_FILE="${GITHUB_WORKSPACE}/Formula/${{ steps.info.outputs.FORMULA }}.rb"
+          set -euo pipefail
+          if [ "${SKIP:-false}" = "true" ]; then
+            exit 0
+          fi
 
-          mkdir -p /tmp/assets
-          ruby - "$FORMULA_FILE" "$VERSION" > /tmp/assets/urls.txt <<'RUBY'
+          FORMULA_FILE="${GITHUB_WORKSPACE}/Formula/${FORMULA}.rb"
+          ASSET_DIR="${RUNNER_TEMP}/assets"
+          mkdir -p "$ASSET_DIR"
+          ruby - "$FORMULA_FILE" "$VERSION" > "${ASSET_DIR}/urls.txt" <<'RUBY'
           formula_file, version = ARGV
           File.readlines(formula_file, chomp: true).each do |line|
             next unless (match = line.match(/url "([^"]+)"/))
@@ -89,15 +131,21 @@ jobs:
           end
           RUBY
 
-          cd /tmp/assets
+          cd "$ASSET_DIR"
           : > checksums.tsv
 
           while IFS= read -r url; do
-            asset=$(basename "$url")
+            asset="${url##*/}"
+            if [[ ! "$asset" =~ ^[A-Za-z0-9][A-Za-z0-9._+-]*$ ]]; then
+              echo "Invalid release asset name: $asset" >&2
+              exit 1
+            fi
             echo "Downloading ${asset}..."
-            curl -sL -f -o "$asset" "$url" \
-              || curl -sL -f -o "$asset" "https://github.com/${REPO}/releases/download/v${VERSION}/${asset}" \
-              || curl -sL -f -o "$asset" "https://github.com/${REPO}/releases/download/${VERSION}/${asset}"
+            curl --fail --silent --show-error --location --retry 3 -o "$asset" "$url" \
+              || curl --fail --silent --show-error --location --retry 3 -o "$asset" \
+                "https://github.com/${REPO}/releases/download/v${VERSION}/${asset}" \
+              || curl --fail --silent --show-error --location --retry 3 -o "$asset" \
+                "https://github.com/${REPO}/releases/download/${VERSION}/${asset}"
             if [ ! -s "$asset" ]; then
               echo "Failed to download $asset"
               exit 1
@@ -107,12 +155,15 @@ jobs:
             echo "  ${asset}: ${SHA}"
           done < urls.txt
       - name: Update formula
-        if: steps.check.outputs.SKIP != 'true'
+        shell: bash
         run: |
-          VERSION="${{ steps.info.outputs.VERSION }}"
-          FORMULA_FILE="Formula/${{ steps.info.outputs.FORMULA }}.rb"
+          set -euo pipefail
+          if [ "${SKIP:-false}" = "true" ]; then
+            exit 0
+          fi
 
-          ruby - "$FORMULA_FILE" "$VERSION" /tmp/assets/checksums.tsv <<'RUBY'
+          FORMULA_FILE="Formula/${FORMULA}.rb"
+          ruby - "$FORMULA_FILE" "$VERSION" "${RUNNER_TEMP}/assets/checksums.tsv" <<'RUBY'
           formula_file, version, checksums_file = ARGV
 
           checksums = File.readlines(checksums_file, chomp: true).to_h do |line|
@@ -140,17 +191,26 @@ jobs:
           File.write(formula_file, lines.join("\n") + "\n")
           RUBY
       - name: Commit and push
-        if: steps.check.outputs.SKIP != 'true'
+        shell: bash
+        env:
+          PUSH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -euo pipefail
+          if [ "${SKIP:-false}" = "true" ]; then
+            exit 0
+          fi
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          FORMULA_FILE="Formula/${{ steps.info.outputs.FORMULA }}.rb"
-          if ! git diff --quiet "$FORMULA_FILE"; then
-            git add "$FORMULA_FILE"
-            git commit -m "Update ${{ steps.info.outputs.FORMULA }} to ${{ steps.info.outputs.VERSION }}"
-            git push
-            echo "✅ Updated ${{ steps.info.outputs.FORMULA }} to ${{ steps.info.outputs.VERSION }}"
+          FORMULA_FILE="Formula/${FORMULA}.rb"
+          if ! git diff --quiet -- "$FORMULA_FILE"; then
+            git add -- "$FORMULA_FILE"
+            git commit -m "Update ${FORMULA} to ${VERSION}"
+            echo "::add-mask::${PUSH_TOKEN}"
+            PUSH_URL="https://x-access-token:${PUSH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+            git push "$PUSH_URL" "HEAD:${GITHUB_REF_NAME}"
+            echo "✅ Updated ${FORMULA} to ${VERSION}"
           else
             echo "No changes to commit"
           fi
