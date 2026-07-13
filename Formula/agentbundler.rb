@@ -1,26 +1,26 @@
 class Agentbundler < Formula
   desc "Compile portable coding-agent assets into target-native packages"
   homepage "https://github.com/alexei-led/agentbundler"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/alexei-led/agentbundler/releases/download/v#{version}/agentbundler_v#{version}_darwin_arm64"
-      sha256 "c5a5f6e8ddc73dfc313a78510173b63c8c0c52a52e11118f828a1b60ec311e7d"
+      sha256 "b6c5b58de1162673182db68da5cc1b1b1c04dacab8660af12e8cc00c34c1fbba"
     else
       url "https://github.com/alexei-led/agentbundler/releases/download/v#{version}/agentbundler_v#{version}_darwin_amd64"
-      sha256 "e6fba2f52aff2d7c9de89d87f6f911dea767a40543093bb8b9d0992e09843a1f"
+      sha256 "f3dc1c5d2506936d1b51c3eee957008e08900788d542ca1dfa58ff332e4fedfc"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/alexei-led/agentbundler/releases/download/v#{version}/agentbundler_v#{version}_linux_arm64"
-      sha256 "175c2ef9ea1059af8a74576c5abf16e3cc6fc7e7a4057b5cadad14237d63c519"
+      sha256 "9239e790f921e7ed668e709e53be838509d084f37de48a39b0bb863312dfc7ab"
     else
       url "https://github.com/alexei-led/agentbundler/releases/download/v#{version}/agentbundler_v#{version}_linux_amd64"
-      sha256 "28960791a366deadf13482dfaa21b0948d5af92af1315cd204a69360ae2a1c53"
+      sha256 "f79e2db3e9a9ae73a0b3c39f9df3669ca2edb1b23482ef8555d944494a372d6f"
     end
   end
 
