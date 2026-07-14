@@ -31,10 +31,10 @@ class Agentbundler < Formula
       Hardware::CPU.arm? ? "agentbundler_v#{version}_linux_arm64" : "agentbundler_v#{version}_linux_amd64"
     end
 
-    bin.install binary_name => "agentbundler"
+    bin.install binary_name => "agbun"
   end
 
   test do
-    assert_match "agentbundler build", shell_output("#{bin}/agentbundler --help")
+    assert_match "agbun build", shell_output("#{bin}/agbun --help")
   end
 end
