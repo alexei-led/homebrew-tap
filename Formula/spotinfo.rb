@@ -1,26 +1,26 @@
 class Spotinfo < Formula
   desc "Explore Spot instance prices, savings and interruption risk across AWS, GCP and Azure"
   homepage "https://github.com/alexei-led/spotinfo"
-  version "2.5.0"
+  version "3.0.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/alexei-led/spotinfo/releases/download/v#{version}/spotinfo_darwin_arm64"
-      sha256 "07fa9b510a845867894821fceb9afe6cb1349aaf53183627678d48af340513c3"
+      sha256 "6c5279f16f00690eecf12a8edf108eb67855e9fa655906e54fa85e9fd2e7a50b"
     else
       url "https://github.com/alexei-led/spotinfo/releases/download/v#{version}/spotinfo_darwin_amd64"
-      sha256 "3d501c8fbfca0b69fbe9d91e29c7c3d913b1006454ca535cd67d826b7f0ed8b8"
+      sha256 "d2d9abf654c3aa759e6654285c306d9fe11ac68d9bbd1fd855e61afc5f9d0cc7"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/alexei-led/spotinfo/releases/download/v#{version}/spotinfo_linux_arm64"
-      sha256 "ab539365fb659c2964e4f732435a0ef34258ff9ef288510ed907009db8f74d96"
+      sha256 "302b936a320340864c8b885f17f025a086ad45e9bbcd930472df71e015dba6c6"
     else
       url "https://github.com/alexei-led/spotinfo/releases/download/v#{version}/spotinfo_linux_amd64"
-      sha256 "342e9fd32a157182a9d8999450e7c42dcfa8b1ec2ff3e0f7ffc725f44ece00e7"
+      sha256 "27cf1348fac8528c36794c68c70cf130b1039c96bff76b9074e394ef61969b21"
     end
   end
 
