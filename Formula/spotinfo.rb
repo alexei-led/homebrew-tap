@@ -1,5 +1,5 @@
 class Spotinfo < Formula
-  desc "CLI tool to explore AWS EC2 Spot instances with pricing and interruption analysis"
+  desc "Explore Spot instance prices, savings and interruption risk across AWS, GCP and Azure"
   homepage "https://github.com/alexei-led/spotinfo"
   version "2.5.0"
   license "Apache-2.0"
@@ -35,7 +35,15 @@ class Spotinfo < Formula
   end
 
   test do
-    assert_match "explore AWS EC2 Spot instances", shell_output("#{bin}/spotinfo --help")
+    help = shell_output("#{bin}/spotinfo --help")
+    assert_match "list", help
+    assert_match "recommend", help
     system bin/"spotinfo", "--version"
+
+    # Answers from the embedded snapshot, so this needs no network and no
+    # cloud credentials.
+    assert_match "m5.large",
+      shell_output("#{bin}/spotinfo list --cloud aws --offline --region us-east-1 " \
+                   "--machine '^m5\\.large$' --output text")
   end
 end
