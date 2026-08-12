@@ -5,10 +5,9 @@ class Ccgram < Formula
   homepage "https://github.com/alexei-led/ccgram"
   url "https://files.pythonhosted.org/packages/d7/a3/94074afa48032377f09378ad52dffe780bbfa014e5cdffc7718f1b75097d/ccgram-4.5.1.tar.gz"
   sha256 "ebc4f2c0f65277b124197d9cec018b23298ef3f3d28e0e52de0404c0daabc7be"
-  # Stated explicitly rather than left to be inferred from the sdist
-  # filename. The PyPI URL is content-addressed, so the version cannot be
-  # interpolated into it and the tap auto-update cannot bump this formula;
-  # keeping the version visible is what makes a stale one easy to spot.
+  # Stated rather than left to be inferred from the sdist filename. A PyPI URL
+  # is content-addressed, so without this the version is only readable by
+  # decoding the tail of a hashed path, and a stale formula is hard to spot.
   version "4.5.1"
   license "MIT"
 
