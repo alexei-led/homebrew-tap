@@ -3,12 +3,12 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/00/a2/5a126f21147dc31d6c2c084d268e3179ab75b45ea785515d038c449bae2d/ccgram-4.6.0.tar.gz"
-  sha256 "cf62f027dd0fd6949fe5de08bdc92e85c881f948f93e248e557d4fa79cc62391"
+  url "https://files.pythonhosted.org/packages/e9/f4/727abf77cb26cd04002ee918c839d79c8cc9f24520989185b6e3dfa4efba/ccgram-4.6.1.tar.gz"
+  sha256 "0b7dc40f24bd10546f523ffdeb99fbadc23b5fe4365f6cda735985ddaffc6c38"
   # Stated rather than left to be inferred from the sdist filename. A PyPI URL
   # is content-addressed, so without this the version is only readable by
   # decoding the tail of a hashed path, and a stale formula is hard to spot.
-  version "4.6.0"
+  version "4.6.1"
   license "MIT"
 
   depends_on "python@3.14"
@@ -80,8 +80,8 @@ class Ccgram < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "libtmux" do
@@ -120,8 +120,8 @@ class Ccgram < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz"
-    sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
+    url "https://files.pythonhosted.org/packages/6a/53/ed9d74092561d4b01a2ef1349d52cdbc135e526c245f366b089cfca6de49/python_dotenv-1.2.3.tar.gz"
+    sha256 "a20a594dabeaa385725aa239d5244871c143ecb356add8a20fcf23773a6c3a35"
   end
 
   resource "python-telegram-bot" do
