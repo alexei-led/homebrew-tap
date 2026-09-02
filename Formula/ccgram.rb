@@ -3,12 +3,12 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/2b/59/54d0cd60f83cf264911401488705dc8bee8051699eacf61756fe128ecd2f/ccgram-4.9.7.tar.gz"
-  sha256 "5926ac1e77ab1e88cc206788eb52789a7aa113414e3a835f5935e886998bf182"
+  url "https://files.pythonhosted.org/packages/59/6c/c540cd0c090862444f7729065b1112a2fd9794826140288ff4533e1588ae/ccgram-4.9.8.tar.gz"
+  sha256 "26b61da31e1d1f651ab1c64205627145ff89a9adf96439cbba615e89be7f02aa"
   # Stated rather than left to be inferred from the sdist filename. A PyPI URL
   # is content-addressed, so without this the version is only readable by
   # decoding the tail of a hashed path, and a stale formula is hard to spot.
-  version "4.9.7"
+  version "4.9.8"
   license "MIT"
 
   depends_on "python@3.14"
