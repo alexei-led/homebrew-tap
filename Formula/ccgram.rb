@@ -3,12 +3,12 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/59/6c/c540cd0c090862444f7729065b1112a2fd9794826140288ff4533e1588ae/ccgram-4.9.8.tar.gz"
-  sha256 "26b61da31e1d1f651ab1c64205627145ff89a9adf96439cbba615e89be7f02aa"
+  url "https://files.pythonhosted.org/packages/6b/dc/4a7b894ea9e9742a9cd283ce5c4f89188942a9acd6e45747ab0fea745d74/ccgram-4.10.0.tar.gz"
+  sha256 "298d6d15cc4e39437ee7af709f4578415ceb2c8086eb829fbe44a52e988891f2"
   # Stated rather than left to be inferred from the sdist filename. A PyPI URL
   # is content-addressed, so without this the version is only readable by
   # decoding the tail of a hashed path, and a stale formula is hard to spot.
-  version "4.9.8"
+  version "4.10.0"
   license "MIT"
 
   depends_on "python@3.14"
@@ -40,8 +40,8 @@ class Ccgram < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
-    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
+    url "https://files.pythonhosted.org/packages/ea/9a/c15a60547004a3f3cea20296c934f827ddd7bdba225a2e7e9fcb5ec48c80/anyio-4.15.0.tar.gz"
+    sha256 "b5c620ed540725e2579c31b17bb995b3bf02c9281c9cace04c7d186380bab85e"
   end
 
   resource "attrs" do
