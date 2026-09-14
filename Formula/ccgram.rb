@@ -3,12 +3,12 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/91/6e/395a72f15ed6ba6431f953d638881c811c8953cb9871b07c6399f45409bf/ccgram-4.11.0.tar.gz"
-  sha256 "8fecd79986bc19199667a8055bb21b4985d81c022eadfb7e227b9b7f7c2d8e4a"
+  url "https://files.pythonhosted.org/packages/e2/81/b7fd9443b8bc135fbe2a490360baa7b8a73998b03ae69162d5974dbc9034/ccgram-4.11.1.tar.gz"
+  sha256 "0d3340e96dac40d98e9e7d956a2fa93d22c1432b98a5e7916da99ff47729c51c"
   # Stated rather than left to be inferred from the sdist filename. A PyPI URL
   # is content-addressed, so without this the version is only readable by
   # decoding the tail of a hashed path, and a stale formula is hard to spot.
-  version "4.11.0"
+  version "4.11.1"
   license "MIT"
 
   depends_on "python@3.14"
@@ -125,8 +125,8 @@ class Ccgram < Formula
   end
 
   resource "python-telegram-bot" do
-    url "https://files.pythonhosted.org/packages/cd/9b/8df90c85404166a6631e857027866263adb27440d8af1dbeffbdc4f0166c/python_telegram_bot-22.6.tar.gz"
-    sha256 "50ae8cc10f8dff01445628687951020721f37956966b92a91df4c1bf2d113742"
+    url "https://files.pythonhosted.org/packages/ba/77/153517bb1ac1bba670c6fb1dbf09e1fd0730494b1705934e715391413a0d/python_telegram_bot-22.8.tar.gz"
+    sha256 "f9d3847fcb23ee603477e442800b33bb4adf851a73e0619d2050be879decf1ef"
   end
 
   resource "socksio" do
