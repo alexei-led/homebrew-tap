@@ -3,12 +3,12 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/4e/2c/fe587b33ae8bc73691efc232d025a6d5fb8df34205ca15798d3068817250/ccgram-4.11.2.tar.gz"
-  sha256 "801518c710358f6157c6cf9d3c7b37beab81480286bf17310639f0557e4bd6b9"
+  url "https://files.pythonhosted.org/packages/4d/cf/f24f3e80229d706c1dd251d6c55452f4829f6a193ce7011a421c01a0bd2d/ccgram-4.11.3.tar.gz"
+  sha256 "dbff1f09f38659f65955b3a961aed98b758adb063073a03cbee47897c8d078c9"
   # Stated rather than left to be inferred from the sdist filename. A PyPI URL
   # is content-addressed, so without this the version is only readable by
   # decoding the tail of a hashed path, and a stale formula is hard to spot.
-  version "4.11.2"
+  version "4.11.3"
   license "MIT"
 
   depends_on "python@3.14"
@@ -80,8 +80,8 @@ class Ccgram < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "libtmux" do
@@ -90,8 +90,8 @@ class Ccgram < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/14/95/989c1b5ca17b72128661530cd6e351a0a83cda9a4d6c036e9ed976c18931/multidict-6.8.0.tar.gz"
-    sha256 "5cd4637ce76312ba1e05eb9c5193fec231f64fee0944e135fa1e951242355b37"
+    url "https://files.pythonhosted.org/packages/d6/99/1d4d69c3512d0ddbfa3a1b69cfd9a151012ab2eb4eabbb096201b1f0b7d8/multidict-6.9.1.tar.gz"
+    sha256 "0f06e60fa190aa7abd0914c2a766736fdc8e9f34878c4346338534b73d1b20e2"
   end
 
   resource "pathspec" do
@@ -105,8 +105,8 @@ class Ccgram < Formula
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/ec/44/c87281c333769159c50594f22610f77398a47ccbfbbf23074e744e86f87c/propcache-0.5.2.tar.gz"
-    sha256 "01c4fc7480cd0598bb4b57022df55b9ca296da7fc5a8760bd8451a7e63a7d427"
+    url "https://files.pythonhosted.org/packages/b3/9a/9fbf4e4ec0c2d7f1c32519fff782ef467859b8faa9fbc5331a96f6395d43/propcache-0.5.4.tar.gz"
+    sha256 "ff6b113f50bc066a698db5d944d2c6dc7507168dd3341e255a8892fd0715a558"
   end
 
   resource "pyromark" do
@@ -150,13 +150,13 @@ class Ccgram < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/36/57/ed58088fafdf4c55a0ad6bde846502567645424d7ebf325230b9237f4085/wcwidth-0.8.3.tar.gz"
-    sha256 "d128512515fbf4612e0ff21fd6380399210318b7b54a9af59dff8454cf9730eb"
+    url "https://files.pythonhosted.org/packages/3d/7a/f98d4ada7c499565ab0c0fcef28a4e54fafa72b8228a6309803c80493c92/wcwidth-0.8.4.tar.gz"
+    sha256 "2dae09efa25253ae2874188e86d6861af3b1652aef4118cdf3f0bda288a957fb"
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/31/33/ebe9e3d1f86c7a0b51094c0a146392045ca1631d2664889539dec8088a33/yarl-1.24.5.tar.gz"
-    sha256 "e81b83143bee16329c23db3c1b2d82b29892fcbcb849186d2f6e98a5abe9a57f"
+    url "https://files.pythonhosted.org/packages/75/16/e8be8e2fb175bbf41a0680381a319f1199fae256588241a2ac8677eafb49/yarl-1.25.1.tar.gz"
+    sha256 "03dd38de09bc213e9a8b29761eec33ee1d5318dac0e49d8af36e4d27830e23a7"
   end
 
   def install
