@@ -3,12 +3,12 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/bf/4f/b8655049e32e1c22f7f7f11132f2aff4a65de4b44cb13c3531f9630be68f/ccgram-4.12.2.tar.gz"
-  sha256 "a082caa0862c9056500c5653ec1f4a2618725e1964ab016078d95b737cf15303"
+  url "https://files.pythonhosted.org/packages/53/df/ff9d3cb121d13539f3bf15e127e1fdde9a67bf6dd1f60110d584bac26018/ccgram-4.12.3.tar.gz"
+  sha256 "a356743671da26ee331bdf50d1a8e9f9ea1f8e41cf61eb222ebe366fdcad84a6"
   # Stated rather than left to be inferred from the sdist filename. A PyPI URL
   # is content-addressed, so without this the version is only readable by
   # decoding the tail of a hashed path, and a stale formula is hard to spot.
-  version "4.12.2"
+  version "4.12.3"
   license "MIT"
 
   depends_on "python@3.14"
@@ -150,8 +150,8 @@ class Ccgram < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/90/be/0553582644877cc0a46ab505266055c8af0032c9ad5cfd7e35398c8af2a6/wcwidth-0.9.0.tar.gz"
-    sha256 "1e9eb9dec86e14e4aa4b877bcf6763f245803c9b08d10f2d72ffae1aa06bbf16"
+    url "https://files.pythonhosted.org/packages/dc/ac/3a943d2792c9bb368aaa8b50121c0f778460ba2d7fbdc0a0366201d9e761/wcwidth-0.9.1.tar.gz"
+    sha256 "5823209b0d43af322ce698c689380d7c15ca31fa8e6e3be8459f27031bef0af5"
   end
 
   resource "yarl" do
