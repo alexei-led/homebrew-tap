@@ -3,12 +3,12 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/53/df/ff9d3cb121d13539f3bf15e127e1fdde9a67bf6dd1f60110d584bac26018/ccgram-4.12.3.tar.gz"
-  sha256 "a356743671da26ee331bdf50d1a8e9f9ea1f8e41cf61eb222ebe366fdcad84a6"
+  url "https://files.pythonhosted.org/packages/dd/7f/17b896c157612fa15baeffe085270c24dd43b85399c6996e11fd9056d3e9/ccgram-4.13.0.tar.gz"
+  sha256 "08333ff6676bb4ff8c3064f95e39e488f062586c534222f2d84e8abbfe0da2b6"
   # Stated rather than left to be inferred from the sdist filename. A PyPI URL
   # is content-addressed, so without this the version is only readable by
   # decoding the tail of a hashed path, and a stale formula is hard to spot.
-  version "4.12.3"
+  version "4.13.0"
   license "MIT"
 
   depends_on "python@3.14"
@@ -120,8 +120,8 @@ class Ccgram < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/6a/53/ed9d74092561d4b01a2ef1349d52cdbc135e526c245f366b089cfca6de49/python_dotenv-1.2.3.tar.gz"
-    sha256 "a20a594dabeaa385725aa239d5244871c143ecb356add8a20fcf23773a6c3a35"
+    url "https://files.pythonhosted.org/packages/74/26/2fbeedb218a787a5eea551c7532cac4e009f83d689dd2faa0d0353473f86/python_dotenv-1.2.4.tar.gz"
+    sha256 "f0d53e69935a851c0dcc78f3ab7aaccd8cabef0b92382b576b824212902873c0"
   end
 
   resource "python-telegram-bot" do
@@ -140,8 +140,8 @@ class Ccgram < Formula
   end
 
   resource "telegramify-markdown" do
-    url "https://files.pythonhosted.org/packages/89/c4/2308a3698b0f723cb2c126f130279fd6ed2ebba0c0f1f6b6799b45d7729b/telegramify_markdown-1.2.0.tar.gz"
-    sha256 "e9fe82b56a1d98045b72a98b09134351e9d36c96d1df240d99e953a89da06325"
+    url "https://files.pythonhosted.org/packages/90/aa/b76eccb3988de6189496c1e9bd0fd9f7fd22a618c55cf8b5189de901a886/telegramify_markdown-1.4.0.tar.gz"
+    sha256 "647ad777ca62a8757f2e07e0f7412b51b9517366bae26b742e186560f101d9c7"
   end
 
   resource "typing-extensions" do
