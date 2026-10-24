@@ -3,12 +3,12 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/d9/9f/8bb21595bf0f114d9c50c6ce42c9159732afc51caacffacdfe99c0514b63/ccgram-4.17.0.tar.gz"
-  sha256 "ad346b10160ee8bb1dae54d04e4e89b9c47a83d2791e94e6c62810e7e306d75f"
+  url "https://files.pythonhosted.org/packages/94/c7/539c464b12ce3a7859793f4c4faf4f456d4c390f4504ad18d26ec3df3b2f/ccgram-4.18.0.tar.gz"
+  sha256 "a6b92cb0af71c1c7b3c1a69849af8016c51c5d218ebcf9009c1406259bfe9910"
   # Stated rather than left to be inferred from the sdist filename. A PyPI URL
   # is content-addressed, so without this the version is only readable by
   # decoding the tail of a hashed path, and a stale formula is hard to spot.
-  version "4.17.0"
+  version "4.18.0"
   license "MIT"
 
   depends_on "python@3.14"
@@ -50,8 +50,8 @@ class Ccgram < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/a6/bd/1436c50cc46699de0230fbaacc1d1de7bfec413176099949e9d5112e88f2/certifi-2026.10.19.tar.gz"
-    sha256 "035c1e85572b141bf1c3a3eff0e33a8eb74917522f2559075ff8d2fea780a1ae"
+    url "https://files.pythonhosted.org/packages/fd/11/b524cbd9bbdaca58608e4cf4053fd463417549e1959fa8d3aa18319f9555/certifi-2026.10.23.tar.gz"
+    sha256 "a9895e6e2758b371e0545e321a3a8fd1fcfd9829ada8824a936dfb16aaaf36cd"
   end
 
   resource "click" do
@@ -90,8 +90,8 @@ class Ccgram < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/f9/79/84ddb5ba16c4eb2c69c71db76ae3c579fe546e511f7170c7e27eedbab7c1/multidict-7.1.0.tar.gz"
-    sha256 "61a4e5d81b8d4e4ad61964b230129e7a2b914793d96289029078fc9009f074ec"
+    url "https://files.pythonhosted.org/packages/9b/18/0127fdb8aa54b1d29d5b8f752af088ad6aa47abe13adaa519377b0b331ab/multidict-7.2.0.tar.gz"
+    sha256 "f4110a13e264858eb00697751785cb2c58ee96707d8ded5ddb8239530d3b9ba4"
   end
 
   resource "pathspec" do
@@ -110,8 +110,8 @@ class Ccgram < Formula
   end
 
   resource "pyromark" do
-    url "https://files.pythonhosted.org/packages/81/d4/1a8b1cf8baceee7e4354fc94913c98bc28d2efc3ee2ffd33ed710ed8df21/pyromark-0.10.1.tar.gz"
-    sha256 "9b5521874b753815db5dccdaf6f9ea48f9e450e7d44caae8bfc7b4882b282809"
+    url "https://files.pythonhosted.org/packages/8d/00/30bc95f84f5e3ba5d934521ca63361ddd5108c43557e39f59fa97772f6b6/pyromark-0.10.3.tar.gz"
+    sha256 "895c32955b138b41db51cc1544e931647d2c644512990b21f46c50078285f1d6"
   end
 
   resource "pyte" do
