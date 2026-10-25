@@ -3,12 +3,12 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/72/b9/dc576ab4150061f90c20d929b9942b527314919854f51dc8fe629dc11962/ccgram-4.18.1.tar.gz"
-  sha256 "d36a7f9cbafd2bec2056e96b29a6c7621c18586801fd0f8a7515bd716f258f04"
+  url "https://files.pythonhosted.org/packages/ff/d0/fca77255cd9dc01247430459e7554ea09b09e81baeb14df3687760ee560e/ccgram-4.18.2.tar.gz"
+  sha256 "e87e6f41cc9ca2c02430c11c697759d633f835ecd3ed70dcb8013efc6c257ec4"
   # Stated rather than left to be inferred from the sdist filename. A PyPI URL
   # is content-addressed, so without this the version is only readable by
   # decoding the tail of a hashed path, and a stale formula is hard to spot.
-  version "4.18.1"
+  version "4.18.2"
   license "MIT"
 
   depends_on "python@3.14"
@@ -90,8 +90,8 @@ class Ccgram < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/9b/18/0127fdb8aa54b1d29d5b8f752af088ad6aa47abe13adaa519377b0b331ab/multidict-7.2.0.tar.gz"
-    sha256 "f4110a13e264858eb00697751785cb2c58ee96707d8ded5ddb8239530d3b9ba4"
+    url "https://files.pythonhosted.org/packages/7b/6b/29ef8e752f5854dcc267ded0652c475bec99b86f255957a0d4fcad657b18/multidict-7.2.1.tar.gz"
+    sha256 "e8af3e6f1bdbc31fd762b094133b478b89988eaebc63cbe82b1d9e3bbd15cede"
   end
 
   resource "pathspec" do
