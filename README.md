@@ -8,6 +8,18 @@ Homebrew formulae for [alexei-led](https://github.com/alexei-led) projects.
 brew tap alexei-led/tap
 ```
 
+On Homebrew versions that require explicit third-party trust, trust only the
+formula you need before installing it:
+
+```bash
+brew trust --formula alexei-led/tap/codex-router
+```
+
+This permits Homebrew to load that formula's Ruby code. To trust every formula,
+cask and command in this tap instead, use `brew trust --tap alexei-led/tap`.
+Only do that if you trust the whole tap. Older Homebrew versions without
+`brew trust` do not need this step.
+
 ## Available Formulae
 
 | Formula                                                    | Description                                                       | Install                                    |
@@ -16,6 +28,7 @@ brew tap alexei-led/tap
 | [ccgram](https://github.com/alexei-led/ccgram)             | Control Claude Code sessions remotely via Telegram                | `brew install alexei-led/tap/ccgram`       |
 | [archfit](https://github.com/alexei-led/archfit)           | Architecture-fitness checks for AI agents and CI                  | `brew install alexei-led/tap/archfit`      |
 | [agentbundler](https://github.com/alexei-led/agentbundler) | Compile portable coding-agent assets into target-native packages  | `brew install alexei-led/tap/agentbundler` |
+| [codex-router](https://github.com/alexei-led/codex-router) | Route Codex requests by task complexity | `brew install alexei-led/tap/codex-router` |
 
 ## Quick Install
 
@@ -31,6 +44,9 @@ brew install alexei-led/tap/archfit
 
 # agentbundler
 brew install alexei-led/tap/agentbundler
+
+# codex-router
+brew install alexei-led/tap/codex-router
 ```
 
 ## Updates
