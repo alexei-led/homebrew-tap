@@ -29,6 +29,7 @@ Only do that if you trust the whole tap. Older Homebrew versions without
 | [archfit](https://github.com/alexei-led/archfit)           | Architecture-fitness checks for AI agents and CI                  | `brew install alexei-led/tap/archfit`      |
 | [agentbundler](https://github.com/alexei-led/agentbundler) | Compile portable coding-agent assets into target-native packages  | `brew install alexei-led/tap/agentbundler` |
 | [codex-router](https://github.com/alexei-led/codex-router) | Route Codex requests by task complexity | `brew install alexei-led/tap/codex-router` |
+| [claude-proxy](https://github.com/alexei-led/claude-proxy) | Local native Anthropic API passthrough for Claude Code | `brew install alexei-led/tap/claude-proxy` |
 
 ## Quick Install
 
@@ -47,6 +48,9 @@ brew install alexei-led/tap/agentbundler
 
 # codex-router
 brew install alexei-led/tap/codex-router
+
+# claude-proxy (experimental, manually started)
+brew install alexei-led/tap/claude-proxy
 ```
 
 ## Updates

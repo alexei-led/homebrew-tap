@@ -1,0 +1,38 @@
+name: Claude proxy formula
+
+on:
+  pull_request:
+    paths:
+      - Formula/claude-proxy.rb
+      - .github/workflows/claude-proxy.yaml
+  push:
+    branches: [main]
+    paths:
+      - Formula/claude-proxy.rb
+      - .github/workflows/claude-proxy.yaml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: claude-proxy-formula-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  formula:
+    name: Formula syntax and style
+    runs-on: macos-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+      HOMEBREW_NO_INSTALL_CLEANUP: "1"
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+      - name: Ruby syntax
+        run: brew ruby -- -c Formula/claude-proxy.rb
+      - name: Formula style
+        run: brew style Formula/claude-proxy.rb
