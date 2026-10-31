@@ -28,6 +28,8 @@ jobs:
     env:
       HOMEBREW_NO_AUTO_UPDATE: "1"
       HOMEBREW_NO_INSTALL_CLEANUP: "1"
+      HOMEBREW_NO_ASK: "1"
+      HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: "1"
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
@@ -36,3 +38,16 @@ jobs:
         run: brew ruby -- -c Formula/claude-proxy.rb
       - name: Formula style
         run: brew style Formula/claude-proxy.rb
+      - name: Install and test the proposed formula
+        shell: bash
+        run: |
+          set -euo pipefail
+          brew tap-new --no-git validation/claude-proxy
+          validation_tap=$(brew --repository validation/claude-proxy)
+          mkdir -p "$validation_tap/Formula"
+          cp Formula/claude-proxy.rb "$validation_tap/Formula/claude-proxy.rb"
+          if brew help trust >/dev/null 2>&1; then
+            brew trust --formula validation/claude-proxy/claude-proxy
+          fi
+          brew install validation/claude-proxy/claude-proxy
+          brew test validation/claude-proxy/claude-proxy
