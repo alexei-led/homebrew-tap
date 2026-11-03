@@ -37,8 +37,11 @@ class ClaudeProxy < Formula
       Homebrew installs only the binary. It does not create configuration,
       read credentials, install a service, or start the proxy.
 
-      Configure and start it manually:
+      Configure and launch on demand:
         claude-proxy --config /path/to/personal.json --check
+        claude-proxy run --config /path/to/personal.json -- claude
+
+      For a manual foreground server (no auto-close):
         claude-proxy --config /path/to/personal.json
 
       Guide: https://github.com/alexei-led/claude-proxy/blob/main/docs/integration.md
@@ -63,8 +66,8 @@ class ClaudeProxy < Formula
         "models": { "brew-test": { "upstream": "local" } }
       }
     JSON
-    assert_match "configuration valid",
-                 shell_output("#{bin}/claude-proxy --config #{testpath}/config.json --check 2>&1")
+    assert_match(/VALID\s+personal\s*\z/,
+                 shell_output("#{bin}/claude-proxy --config #{testpath}/config.json --check 2>&1"))
     (testpath/"unsafe.json").write((testpath/"config.json").read.sub("127.0.0.1:43171", "0.0.0.0:43171"))
     assert_match "listener must be 127.0.0.1",
                  shell_output("#{bin}/claude-proxy --config #{testpath}/unsafe.json --check 2>&1", 1)
