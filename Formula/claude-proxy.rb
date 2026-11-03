@@ -2,26 +2,26 @@ class ClaudeProxy < Formula
   desc "Local native Anthropic API proxy for Claude Code"
   homepage "https://github.com/alexei-led/claude-proxy"
   # The tap updater requires an explicit version.
-  version "0.1.4"
+  version "0.1.5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/alexei-led/claude-proxy/releases/download/v#{version}/claude-proxy_darwin_arm64"
-      sha256 "5fc69c59efaf294b035544df87226849f8957fe34a82a8f4c3056f007b14e501"
+      sha256 "69bf6fe853caf254728c7a8dc0997a39c2ad2971079843a51bb7797190421542"
     else
       url "https://github.com/alexei-led/claude-proxy/releases/download/v#{version}/claude-proxy_darwin_amd64"
-      sha256 "6f61060c21e2fa256057c3e9a6fee833f71b8d5aa7a6513c76f3988c73c48d36"
+      sha256 "96cb149b3e8cb4771244638fcd0a7884c8033071cf92107f8cbc80db2790f536"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/alexei-led/claude-proxy/releases/download/v#{version}/claude-proxy_linux_arm64"
-      sha256 "5af2251586dfa8ecb6ce2a0b9a58d168db348ee1ee4f3941529af527bb8907c3"
+      sha256 "ec86a9cd3059252880222c218bd41a05443f056d7170bc019f767014c8b6c9eb"
     else
       url "https://github.com/alexei-led/claude-proxy/releases/download/v#{version}/claude-proxy_linux_amd64"
-      sha256 "aa0755fcf4ce8437960344c1eb8be23080821d7e3adf29889e70e29985b88baa"
+      sha256 "fa0a5f2a6ff54363cb10b07b4728482e7fb70a09c2714c4c831123af51d03f3b"
     end
   end
 
