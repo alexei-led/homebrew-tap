@@ -3,12 +3,12 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/6a/1d/4bd5da8cb7d16a57bab189eece64baf110c64cc74d4b6265b6b9c3175f1e/ccgram-4.21.0.tar.gz"
-  sha256 "6bef6193a70d3ab75ed3f3d66bb1dfb7894e1354d2f782f4ea64d6ad5c4716ec"
+  url "https://files.pythonhosted.org/packages/b2/9a/93d889c431d37edb0c9069a9f8bb2a2d67b8019a5fa56ffaa9224d68052c/ccgram-4.21.1.tar.gz"
+  sha256 "894fc9aa464239a3e85e8d116ce29d895ae1143db05846ae87fa828838b6f17e"
   # Stated rather than left to be inferred from the sdist filename. A PyPI URL
   # is content-addressed, so without this the version is only readable by
   # decoding the tail of a hashed path, and a stale formula is hard to spot.
-  version "4.21.0"
+  version "4.21.1"
   license "MIT"
 
   depends_on "python@3.14"
@@ -40,8 +40,8 @@ class Ccgram < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
-    sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
+    url "https://files.pythonhosted.org/packages/a1/98/7e457a3b014976887a050561955c0b76e1e7e2d6e27b78ecef2ef80518f2/anyio-4.16.0.tar.gz"
+    sha256 "59bb03251907983d1603d27c3087ddb1e93299ea2163adcdba37899a4fb12ffb"
   end
 
   resource "attrs" do
@@ -110,8 +110,8 @@ class Ccgram < Formula
   end
 
   resource "pyromark" do
-    url "https://files.pythonhosted.org/packages/8d/00/30bc95f84f5e3ba5d934521ca63361ddd5108c43557e39f59fa97772f6b6/pyromark-0.10.3.tar.gz"
-    sha256 "895c32955b138b41db51cc1544e931647d2c644512990b21f46c50078285f1d6"
+    url "https://files.pythonhosted.org/packages/87/1a/8ce20e97276908c35638574240f7fde8b51879ee827b3e8156abafc35fd4/pyromark-0.10.4.tar.gz"
+    sha256 "0eeed7ef2bb651785375329993a8ffbb7597704b1cee7be01e81513b2d4211ef"
   end
 
   resource "pyte" do
@@ -145,8 +145,8 @@ class Ccgram < Formula
   end
 
   resource "telegramify-markdown" do
-    url "https://files.pythonhosted.org/packages/cf/78/a6b5bef18146174244bce11477c3a51a1bee0d920780aa27ccd5b59352d3/telegramify_markdown-1.4.1.tar.gz"
-    sha256 "ef89d40e5f5c20a8d95e2a9f72522a0426af7000e425b4cce1fa62389678277c"
+    url "https://files.pythonhosted.org/packages/3a/97/e9a2c14a40fa6a6f57b205ffca9e6caaaabca4c6ef9b16361d3074056fa2/telegramify_markdown-1.4.2.tar.gz"
+    sha256 "02546f785020ac0b897eb0b139f9d42c530f1053b0a34418e973e0eab01fbf5d"
   end
 
   resource "typing-extensions" do
