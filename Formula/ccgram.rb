@@ -3,12 +3,12 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/b2/9a/93d889c431d37edb0c9069a9f8bb2a2d67b8019a5fa56ffaa9224d68052c/ccgram-4.21.1.tar.gz"
-  sha256 "894fc9aa464239a3e85e8d116ce29d895ae1143db05846ae87fa828838b6f17e"
+  url "https://files.pythonhosted.org/packages/48/2e/cf4f8d7518f583421835cbb668719d30071c909ce69288938488f21750b1/ccgram-4.22.0.tar.gz"
+  sha256 "87fa57929b19c4d77a864d2442d936b4047d1048347978a2ee4ff539cd9d8932"
   # Stated rather than left to be inferred from the sdist filename. A PyPI URL
   # is content-addressed, so without this the version is only readable by
   # decoding the tail of a hashed path, and a stale formula is hard to spot.
-  version "4.21.1"
+  version "4.22.0"
   license "MIT"
 
   depends_on "python@3.14"
@@ -55,8 +55,8 @@ class Ccgram < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
-    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
+    url "https://files.pythonhosted.org/packages/45/37/edbf1b0707709013c0cf2e8317e03d97ed29bf4cac709fe328904ae92a38/click-8.5.1.tar.gz"
+    sha256 "9bbfada76703fd1d784b83eea012e3e8c6a001a876543ef104fa56aaaeb072b4"
   end
 
   resource "frozenlist" do
