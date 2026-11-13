@@ -2,26 +2,26 @@ class CodexRouter < Formula
   desc "Route Codex requests to a model and reasoning effort based on task complexity"
   homepage "https://github.com/alexei-led/codex-router"
   # The tap updater requires an explicit version, even though brew audit flags it as redundant.
-  version "0.12.0"
+  version "0.12.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/alexei-led/codex-router/releases/download/v#{version}/codex-router-darwin-arm64"
-      sha256 "4744278ad6bb813bb666a59dcf598d818283b50fffc0050d3dacf5f9bba2a3a9"
+      sha256 "a3a0a9e33b00179fc9d4698d115ddcece910ae92dc3384bdbdb58882c4b2cb37"
     else
       url "https://github.com/alexei-led/codex-router/releases/download/v#{version}/codex-router-darwin-amd64"
-      sha256 "60ac235a18d81542df0f39aa7c1c2042a5bd340b69d611ad3f3324d14e6606d3"
+      sha256 "f304299e19d3d6e6b26c80c2092ceafaa2ee767b42268ded67da6f3de221e37d"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/alexei-led/codex-router/releases/download/v#{version}/codex-router-linux-arm64"
-      sha256 "0d774b33fb35149641cbf19370d1f682113120c74ea3339b85020a235a4ff473"
+      sha256 "62390136e6795da7e2f9831ac4655f0f23dea6001aa43182180406cb6f6857bf"
     else
       url "https://github.com/alexei-led/codex-router/releases/download/v#{version}/codex-router-linux-amd64"
-      sha256 "5105e77dcf9a605e4ad5e1f2d32a3dc50f34f05b2486c5bff58398aee466999d"
+      sha256 "cbab3e8394dec9ed24c39288be99ca9ce929c6fb69da5822631ca78d3f461d5d"
     end
   end
 
