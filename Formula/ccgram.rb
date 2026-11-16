@@ -3,12 +3,12 @@ class Ccgram < Formula
 
   desc "Control Claude Code sessions remotely via Telegram"
   homepage "https://github.com/alexei-led/ccgram"
-  url "https://files.pythonhosted.org/packages/48/2e/cf4f8d7518f583421835cbb668719d30071c909ce69288938488f21750b1/ccgram-4.22.0.tar.gz"
-  sha256 "87fa57929b19c4d77a864d2442d936b4047d1048347978a2ee4ff539cd9d8932"
+  url "https://files.pythonhosted.org/packages/a9/29/c13e0678c2e2f5ddd935383c8ce9a5093eb5187fd499a5fd4533ddef56c0/ccgram-4.23.0.tar.gz"
+  sha256 "8ece7dbef6e4b98f324e2f4958c147698fb8eef5ee3aa9b55a24b7b77d705c8c"
   # Stated rather than left to be inferred from the sdist filename. A PyPI URL
   # is content-addressed, so without this the version is only readable by
   # decoding the tail of a hashed path, and a stale formula is hard to spot.
-  version "4.22.0"
+  version "4.23.0"
   license "MIT"
 
   depends_on "python@3.14"
@@ -110,8 +110,8 @@ class Ccgram < Formula
   end
 
   resource "pyromark" do
-    url "https://files.pythonhosted.org/packages/87/1a/8ce20e97276908c35638574240f7fde8b51879ee827b3e8156abafc35fd4/pyromark-0.10.4.tar.gz"
-    sha256 "0eeed7ef2bb651785375329993a8ffbb7597704b1cee7be01e81513b2d4211ef"
+    url "https://files.pythonhosted.org/packages/85/3b/35ba857d2df310a0f358dc129371f386cf6198a64a5427d4e113bf62fbe3/pyromark-0.10.6.tar.gz"
+    sha256 "61aed01c2722e5481af42a093f5967618b89fff0882a465f8bf0225ccb3a0808"
   end
 
   resource "pyte" do
