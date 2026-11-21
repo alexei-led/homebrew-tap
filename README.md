@@ -26,7 +26,6 @@ Only do that if you trust the whole tap. Older Homebrew versions without
 | ---------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------ |
 | [spotinfo](https://github.com/alexei-led/spotinfo)         | AWS EC2 Spot instance explorer with pricing and interruption data | `brew install alexei-led/tap/spotinfo`     |
 | [ccgram](https://github.com/alexei-led/ccgram)             | Control Claude Code sessions remotely via Telegram                | `brew install alexei-led/tap/ccgram`       |
-| [archfit](https://github.com/alexei-led/archfit)           | Architecture-fitness checks for AI agents and CI                  | `brew install alexei-led/tap/archfit`      |
 | [agentbundler](https://github.com/alexei-led/agentbundler) | Compile portable coding-agent assets into target-native packages  | `brew install alexei-led/tap/agentbundler` |
 | [codex-router](https://github.com/alexei-led/codex-router) | Route Codex requests by task complexity | `brew install alexei-led/tap/codex-router` |
 | [claude-proxy](https://github.com/alexei-led/claude-proxy) | Local native Anthropic API passthrough for Claude Code | `brew install alexei-led/tap/claude-proxy` |
@@ -39,9 +38,6 @@ brew install alexei-led/tap/spotinfo
 
 # ccgram
 brew install alexei-led/tap/ccgram
-
-# archfit
-brew install alexei-led/tap/archfit
 
 # agentbundler
 brew install alexei-led/tap/agentbundler
@@ -85,3 +81,5 @@ GitHub-release binary repos can trigger formula updates via `repository_dispatch
         --arg repo 'alexei-led/your-formula' \
         '{event_type: "update-formula", client_payload: {formula: $formula, version: $version, repo: $repo}}')"
 ```
+
+archfit moved to its own tap: `brew install coupling-dev/tap/archfit` ([coupling-dev/archfit](https://github.com/coupling-dev/archfit)).
